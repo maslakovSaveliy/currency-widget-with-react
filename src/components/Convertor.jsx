@@ -15,6 +15,7 @@ const Convertor = () => {
       name: response.data.Valute.USD.CharCode,
       nominal: response.data.Valute.USD.Nominal,
       price: response.data.Valute.USD.Value,
+      previous: response.data.Valute.USD.Previous,
     });
   };
   useEffect(() => {
@@ -34,6 +35,7 @@ const Convertor = () => {
               style: "currency",
               currency: "RUB",
             })}
+            {currency.price < currency.previous ? "▼" : "▲"}
           </h2>
         </span>
       </div>
